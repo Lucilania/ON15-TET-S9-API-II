@@ -6,7 +6,7 @@ const cors = require("cors")
 const app = express()
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json())//body parser
 
 
 app.get("/", (request, response)=>{
@@ -33,7 +33,7 @@ app.get("/ghibli/buscar/:id", (request, response)=>{
 })
 
 app.get("/ghibli/filtro", (request, response)=>{
-    let tituloRequest = request.query.titulo.toLowerCase()
+    let tituloRequest = request.query.titulo.toLowerCase() //** */
 
     let filmeEncontrado = ghibliJson.filter(
         filme => filme.title.toLowerCase().includes(tituloRequest))
@@ -42,7 +42,7 @@ app.get("/ghibli/filtro", (request, response)=>{
 })
 
 
-app.post("/ghibli/cadastrar", (request,response)=>{
+app.post("/ghibli/cadastrar", (request,response)=>{ // ***2//
     let bodyRequest = request.body
 
     let novoFilme = {
