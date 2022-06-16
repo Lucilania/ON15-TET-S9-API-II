@@ -1,35 +1,35 @@
-// IMPORTAR FUNÇÕES CONTROLE - FILMES
-const controller = require("../controllers/filmesController");
+// IMPORTAR FUNÇÕES CONTROLE - SERIES
+const controller = require("../controllers/seriesController");
 
 const express = require("express");
 
 const router = express.Router();
 
-// ROTA TODOS OS FILMES
+// ROTA TODAS AS SERIES
 router.get("/catalogo", controller.getAll);
 
-// ROTA BUSCAR FILMES POR ID
+// ROTA BUSCAR SERIES POR ID
 router.get("/buscar/:id", controller.getByID);
 
-// ROTA BUSCAR FILMES POR TITULO
+// ROTA BUSCAR SERIES POR TITULO
 router.get("/filtro", controller.getByTitle);
 
-// ROTA BUSCAR FILMES POR GENERO
+// ROTA BUSCAR SERIES POR GENERO
 router.get("/genero", controller.getByGenre);
 
-// ROTA CADASTRAR NOVO FILME
-router.post("/cadastrar", controller.createMovie);
+// ROTA CADASTRAR NOVA SERIE
+router.post("/cadastrar", controller.createSerie);
 
-// ROTA DELETAR FILME POR ID
+// ROTA DELETAR SERIE POR ID
 router.delete("/delete/:id", controller.deleteByID);
 
-// ROTA SUBSTITUIR FILME INTEIRO
+// ROTA SUBSTITUIR SERIE INTEIRA
 router.put("/substituir/:id", controller.updateAll);
 
-// ROTA ATUALIZAR TITULO DO FILME
+// ROTA ATUALIZAR TITULO DA SERIE
 router.patch("/updateTitulo/:id", controller.updateTitle);
 
-// ROTA ATUALIZAR QUALQUER ITEM DO FILME
+// ROTA ATUALIZAR QUALQUER ITEM DA SERIE
 router.patch("/updateItens/:id", controller.updateItems);
 
 // EXPORTAR ROTAS
